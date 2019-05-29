@@ -1,5 +1,8 @@
 # JsonServer
 
+Download NodeJs:
+https://nodejs.org/en/
+
 Criar diretório
 >mkdir db
 
@@ -11,3 +14,6 @@ Iniciar package.json e
 
 package-lock.json
 >npm i --save json-server
+
+Executar Server.js
+>node server.js
