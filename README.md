@@ -8,4 +8,5 @@ Instalar NPM do Nodejs
 
 Iniciar package.json e packege-lock.json
 >npm init -y
+--
 >npm i --save json-server
