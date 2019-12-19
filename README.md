@@ -35,7 +35,7 @@ Acessar:
    
 **Próximas etapas realizar consultas dos dados nos Arquivos JSON**
 
->Colar bloco de Código abaixo no arquivo server.json
+>Colar bloco de Código abaixo no arquivo server.js
 
                   var express = require('express');
                   var bodyParser = require('body-parser');
