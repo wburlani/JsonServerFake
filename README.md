@@ -34,3 +34,47 @@ Acessar:
    
    
 **Próximas etapas realizar consultas dos dados nos Arquivos JSON**
+
+
+//Adicionar os blocos abaixo ao arquivo server.js
+
+var express = require('express');
+var bodyParser = require('body-parser');
+var fs = require('fs');
+
+var app = express();
+
+app.use(bodyParser.urlencoded({ extended:true }));
+app.use(bodyParser.json());
+
+app.use(function(req, res, next){
+  res.setHeader("Access-Control-Allow-Origin", "*");
+  res.setHeader("Access-Control-Allow-Methods", "GET, POST, PUT, DELETE");
+  res.setHeader("Access-Control-Allow-Headers", "content-type");
+  res.setHeader("Content-Type", "application/json");
+  res.setHeader("Access-Control-Allow-Credentials", true);
+  next();
+});
+
+//função buscar a partir do arquivo teste.json
+app.get('/testeJson', function(req, res){
+  fs.readFile('teste.json', 'utf8', function(err, data){
+    if (err) {
+      var response = {status: 'falha', resultado: err};
+      res.json(response);
+    } else {
+      var obj = JSON.parse(data);
+      var result = 'Nenhum usuário foi encontrado';
+
+
+      //buscar dado pelo id
+      obj.buscar.forEach(function(buscarId) {
+        if (buscarId != null) {
+          if (buscarId.id == req.query.id) {
+            result = buscarId;
+          }
+        }
+      });
+
+
+
