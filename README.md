@@ -77,4 +77,20 @@ app.get('/testeJson', function(req, res){
       });
 
 
+        //buscar dado pela descricao
+        obj.buscar.forEach(function(buscarDescricao) {
+        if (buscarDescricao != null) {
+          if (bucarDescricao.descricao == req.query.descricao) {
+            result = buscarDescricao;
+          }
+        }
+      });
+
+      var response = {status: 'sucesso', resultado: result};
+      res.json(response);
+    }
+  });
+});
+
+
 
