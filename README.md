@@ -99,6 +99,6 @@ Acessar:
 
 
 >na URL do navegar:
-      http://127.0.0.1:3000/testeJson/?id=1
-      http://127.0.0.1:3000/testeJson/?descricao=Primeiro%20usuário
+           **http://127.0.0.1:3000/testeJson/?id=1**
+           **http://127.0.0.1:3000/testeJson/?descricao=Primeiro%20usuário**
 
